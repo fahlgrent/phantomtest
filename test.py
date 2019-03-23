@@ -18,8 +18,6 @@ def csv_to_list_1(action=None, success=None, container=None, results=None, handl
     
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    id_value = container.get('id', None)
-
     # collect data for 'csv_to_list_1' call
     container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.vaultId', 'artifact:*.id'])
 
@@ -30,7 +28,7 @@ def csv_to_list_1(action=None, success=None, container=None, results=None, handl
         if container_item[0]:
             parameters.append({
                 'vault_id': container_item[0],
-                'container_id': id_value,
+                'container_id': "2",
                 'list_id': "",
                 'list_name': "",
                 # context (artifact id) is added to associate results with the artifact
