@@ -15,7 +15,9 @@ def on_start(container):
 
 def csv_to_list_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
     phantom.debug('csv_to_list_1() called')
-
+    
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     id_value = container.get('id', None)
 
     # collect data for 'csv_to_list_1' call
@@ -35,7 +37,7 @@ def csv_to_list_1(action=None, success=None, container=None, results=None, handl
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act("csv to list", parameters=parameters, assets=['csvhome'], name="csv_to_list_1")
+    phantom.act("csv to list", parameters=parameters, assets=['csvhome'], name="csv_to_list_1", parent_action=action)
 
     return
 
@@ -54,7 +56,7 @@ def csv_from_artifacts_1(action=None, success=None, container=None, results=None
         'page_size': 1000,
     })
 
-    phantom.act("csv from artifacts", parameters=parameters, assets=['csvhome'], name="csv_from_artifacts_1")
+    phantom.act("csv from artifacts", parameters=parameters, assets=['csvhome'], callback=csv_to_list_1, name="csv_from_artifacts_1")
 
     return
 
