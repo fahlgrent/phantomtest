@@ -8,8 +8,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'csv_to_list_1' block
-    csv_to_list_1(container=container)
+    # call 'csv_from_artifacts_1' block
+    csv_from_artifacts_1(container=container)
 
     return
 
@@ -36,6 +36,25 @@ def csv_to_list_1(action=None, success=None, container=None, results=None, handl
             })
 
     phantom.act("csv to list", parameters=parameters, assets=['csvhome'], name="csv_to_list_1")
+
+    return
+
+def csv_from_artifacts_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('csv_from_artifacts_1() called')
+
+    id_value = container.get('id', None)
+
+    # collect data for 'csv_from_artifacts_1' call
+
+    parameters = []
+    
+    # build parameters list for 'csv_from_artifacts_1' call
+    parameters.append({
+        'container_id': id_value,
+        'page_size': 1000,
+    })
+
+    phantom.act("csv from artifacts", parameters=parameters, assets=['csvhome'], name="csv_from_artifacts_1")
 
     return
 
