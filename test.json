@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "97a8ec4298dd0ca3cff35bef67bb29914c2c84e0",
+            "hash": "35b9a10a7b180d204017466145a4442daf43b414",
             "joint": {
                 "cells": [
                     {
@@ -55,7 +55,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'csv_from_artifacts_1' block\n    csv_from_artifacts_1(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'csv_to_list_1' block\n    csv_to_list_1(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -217,12 +217,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 76,
-                        "line_start": 63,
+                        "line_end": 53,
+                        "line_start": 40,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 4,
+                        "order": 3,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -277,8 +277,8 @@
                             }
                         },
                         "position": {
-                            "x": 500,
-                            "y": 360
+                            "x": 760,
+                            "y": 100
                         },
                         "previous_function": "",
                         "previous_name": "",
@@ -314,7 +314,7 @@
                         "endDirections": [
                             "left"
                         ],
-                        "id": "9cd9c7ad-f051-42c7-a93f-860b5e4d468a",
+                        "id": "9eeecacc-b661-4794-9aa1-c5ef128797b2",
                         "router": {
                             "name": "metro"
                         },
@@ -327,324 +327,12 @@
                             "right"
                         ],
                         "target": {
-                            "id": "da38a757-7752-4238-8de5-e4bb7447c992",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 7
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "f09d99eb-b5a6-4faa-9696-9f9d4d4d28e6",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "da38a757-7752-4238-8de5-e4bb7447c992",
-                            "port": null,
-                            "selector": "g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
                             "id": "f5055d64-aaed-4a8c-92cb-379d9fa330e6",
                             "port": null,
                             "selector": "g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
                         },
                         "type": "link",
-                        "z": 13
-                    },
-                    {
-                        "action": "csv from artifacts",
-                        "action_type": "generic",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {
-                            "container_id": "container:id",
-                            "page_size": "1000"
-                        },
-                        "angle": 0,
-                        "app": "CSV Import",
-                        "appid": "1b0e5665-faeb-4c8e-9fd3-8627cd90d530",
-                        "approver": "",
-                        "assets": [
-                            {
-                                "action": "csv from artifacts",
-                                "actions": [
-                                    "csv from artifacts",
-                                    "csv to list",
-                                    "ingest csv",
-                                    "test connectivity"
-                                ],
-                                "active": true,
-                                "app_name": "CSV Import",
-                                "app_version": "1.0.0",
-                                "appid": "1b0e5665-faeb-4c8e-9fd3-8627cd90d530",
-                                "asset_name": "csvhome",
-                                "config_type": "asset",
-                                "count": 0,
-                                "fields": {
-                                    "container_id": "container:id",
-                                    "page_size": "1000"
-                                },
-                                "has_app": true,
-                                "id": 8,
-                                "loaded": false,
-                                "missing": false,
-                                "name": "csvhome",
-                                "output": [
-                                    {
-                                        "column_name": "container_id",
-                                        "column_order": 1,
-                                        "contains": [],
-                                        "data_path": "action_result.parameter.container_id",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "column_name": "status",
-                                        "column_order": 2,
-                                        "data_path": "action_result.status",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "action_result.message",
-                                        "data_type": "string"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects",
-                                        "data_type": "numeric"
-                                    },
-                                    {
-                                        "data_path": "summary.total_objects_successful",
-                                        "data_type": "numeric"
-                                    }
-                                ],
-                                "parameters": {
-                                    "container_id": {
-                                        "contains": [],
-                                        "data_type": "numeric",
-                                        "default": "",
-                                        "description": "The container_id for the artifacts",
-                                        "key": "container_id",
-                                        "order": 0,
-                                        "primary": false,
-                                        "required": true,
-                                        "value_list": []
-                                    },
-                                    "page_size": {
-                                        "contains": [],
-                                        "data_type": "numeric",
-                                        "default": "1000",
-                                        "description": "The number of pages to retrieve.",
-                                        "key": "page_size",
-                                        "order": 1,
-                                        "primary": false,
-                                        "required": false,
-                                        "value_list": []
-                                    }
-                                },
-                                "product_name": "CSV",
-                                "product_vendor": "CSV",
-                                "targets": "8",
-                                "type": "information"
-                            }
-                        ],
-                        "attrs": {
-                            ".action": {
-                                "text": "csv from artifacts"
-                            },
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "Generic"
-                            },
-                            "g.approver image": {
-                                "opacity": 1
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.icon image": {
-                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            },
-                            "g.timer image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def csv_from_artifacts_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('csv_from_artifacts_1() called')\n\n    id_value = container.get('id', None)\n\n    # collect data for 'csv_from_artifacts_1' call\n\n    parameters = []\n    \n    # build parameters list for 'csv_from_artifacts_1' call\n    parameters.append({\n        'container_id': id_value,\n        'page_size': 1000,\n    })\n\n    phantom.act(\"csv from artifacts\", parameters=parameters, assets=['csvhome'], callback=csv_to_list_1, name=\"csv_from_artifacts_1\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "delay": 0,
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "da38a757-7752-4238-8de5-e4bb7447c992",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 63,
-                        "line_start": 44,
-                        "message": "Configuring now",
-                        "name": "csv from artifacts",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 380,
-                            "y": 60
-                        },
-                        "previous_function": "",
-                        "previous_name": "csv_from_artifacts_1",
-                        "required_params": {
-                            "container_id": true
-                        },
-                        "reviewer": "",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "app_action_assets",
-                        "status": "",
-                        "title": "Generic",
-                        "type": "coa.Action",
-                        "warn": false,
-                        "z": 15
+                        "z": 17
                     },
                     {
                         "action": "csv to list",
@@ -652,9 +340,9 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "container_id": "container:id",
+                            "container_id": "2",
                             "list_id": "",
-                            "list_name": "",
+                            "list_name": "dlp",
                             "vault_id": "artifact:*.cef.vaultId"
                         },
                         "angle": 0,
@@ -678,9 +366,9 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "container_id": "container:id",
+                                    "container_id": "2",
                                     "list_id": "",
-                                    "list_name": "",
+                                    "list_name": "dlp",
                                     "vault_id": "artifact:*.cef.vaultId"
                                 },
                                 "has_app": true,
@@ -858,14 +546,14 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def csv_to_list_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('csv_to_list_1() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    id_value = container.get('id', None)\n\n    # collect data for 'csv_to_list_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.vaultId', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'csv_to_list_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'list_name': \"\",\n                'vault_id': container_item[0],\n                'container_id': id_value,\n                'list_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"csv to list\", parameters=parameters, assets=['csvhome'], name=\"csv_to_list_1\", parent_action=action)\n\n    return",
+                        "block_code": "def csv_to_list_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('csv_to_list_1() called')\n\n    # collect data for 'csv_to_list_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.vaultId', 'artifact:*.id'])\n\n    parameters = []\n    \n    # build parameters list for 'csv_to_list_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'list_name': \"dlp\",\n                'vault_id': container_item[0],\n                'container_id': \"2\",\n                'list_id': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(\"csv to list\", parameters=parameters, assets=['csvhome'], name=\"csv_to_list_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
-                        "connection_name": "csv from artifacts",
-                        "connection_type": "action",
+                        "connection_name": "",
+                        "connection_type": "",
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
@@ -883,7 +571,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 47,
-                        "line_end": 44,
+                        "line_end": 40,
                         "line_start": 16,
                         "message": "Configuring now",
                         "name": "csv to list",
@@ -946,7 +634,7 @@
                             }
                         },
                         "position": {
-                            "x": 740,
+                            "x": 440,
                             "y": 60
                         },
                         "previous_function": "",
@@ -966,7 +654,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 16
+                        "z": 18
                     }
                 ]
             },
@@ -975,7 +663,7 @@
         "schema": 3,
         "version": "4.2.7532"
     },
-    "create_time": "2019-03-31T16:34:32.012476+00:00",
+    "create_time": "2019-03-31T16:35:54.504345+00:00",
     "draft_mode": false,
     "labels": [
         "*"
